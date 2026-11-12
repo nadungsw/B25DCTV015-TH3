@@ -1,0 +1,135 @@
+/*chế độ sáng (mặc định) */
+:root {
+  --bg-body: #f3f4f6;
+  --bg-card: #ffffff;
+  --text-main: #1f2937;
+  --border-color: #d1d5db;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --danger: #ef4444;
+}
+
+/*chế độ tối (dark mode) */
+body.dark-mode {
+  --bg-body: #111827;
+  --bg-card: #1f2937;
+  --text-main: #f9fafb;
+  --border-color: #374151;
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --danger: #f87171;
+}
+
+/*toàn trang */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* header chung */
+.global-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.global-header h1 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.btn-theme {
+  background: var(--bg-body);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-theme:hover {
+  border-color: var(--primary);
+}
+
+/* Cấu trúc phần class và hooks */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+.container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Biểu mẫu và input */
+.form-box { display: flex; gap: 10px; margin-bottom: 20px; }
+input, select { 
+  padding: 10px; 
+  flex: 1; 
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+}
+input:focus, select:focus { border-color: var(--primary); }
+
+.search-box { width: 100%; padding: 10px; margin-bottom: 15px; box-sizing: border-box; }
+
+/*Buttons*/
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover { background-color: var(--primary-hover); }
+
+/* nút bộ lọc */
+.filters { margin-bottom: 20px; }
+.filters button { 
+  background-color: var(--bg-body); 
+  color: var(--text-main); 
+  border: 1px solid var(--border-color);
+  margin-right: 8px; 
+}
+.filters button.active { background-color: var(--primary); color: white; border: none; }
+
+/*danh sách chi tiêu */
+.expense-list { list-style: none; padding: 0; }
+.expense-list li { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 12px; 
+  border-bottom: 1px solid var(--border-color); 
+}
+.expense-list li button { background-color: var(--danger); padding: 6px 12px; font-size: 13px;}
+
+.stats-box { 
+  margin-top: 20px; 
+  padding: 15px; 
+  background: var(--bg-body); 
+  border: 1px solid var(--border-color);
+  border-radius: 8px; 
+}
