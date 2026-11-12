@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
-// Custom hook lấy, thêm, xóa dữ liệu qua mockapi[cite: 15]
+// custom hook lấy, thêm, xóa dữ liệu qua mockapi
 export const useFetch = (url) => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true); // Trạng thái đang tải[cite: 15]
-  const [error, setError] = useState(null);     // Trạng thái lỗi[cite: 15]
+  const [loading, setLoading] = useState(true); // Trạng thái đang tải
+  const [error, setError] = useState(null);     // Trạng thái lỗi
 
   const fetchData = async () => {
     try {
@@ -24,7 +24,7 @@ export const useFetch = (url) => {
   return { data, setData, loading, error };
 };
 
-// Yêu cầu nâng cao: Custom hook useClock[cite: 15]
+// Yêu cầu nâng cao: custom hook useClock
 export const useClock = () => {
   const [time, setTime] = useState(new Date());
   useEffect(() => {
@@ -34,7 +34,7 @@ export const useClock = () => {
   return time;
 };
 
-// Yêu cầu nâng cao: Ô tìm kiếm có độ trễ (debounce)[cite: 15]
+// Yêu cầu nâng cao: Ô tìm kiếm có độ trễ (debounce)
 export const useDebounce = (value, delay) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
   useEffect(() => {
